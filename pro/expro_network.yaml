@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: net-check-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: net-check
+  template:
+    metadata:
+      labels:
+        app: net-check
+    spec:
+      containers:
+      - name: net-check-container
+        image: praqma/network-multitool
+
+     
